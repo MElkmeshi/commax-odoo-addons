@@ -11,7 +11,9 @@ services:
       - odoo-db-data:/var/lib/postgresql/data
 
   odoo:
-    image: odoo:17
+    build:
+      context: .
+      dockerfile: Dockerfile
     user: root
     depends_on:
       - db
